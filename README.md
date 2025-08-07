@@ -92,3 +92,13 @@ Every module must expose:
 }
 ```
 
+### PARENT_MODULE_PATH
+
+If set, this environment variable tells the setup system where to look for local copies of dependent modules.
+
+This allows modules to reuse already-cloned or local modules instead of downloading them again.
+
+**Example usage:**
+
+```bash
+PARENT_MODULE_PATH=/opt/myproject/HL-Web python setup.py
