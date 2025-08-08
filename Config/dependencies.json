@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "git": [
+      {
+        "url": "https://github.com/example/example",
+        "ref": "v1.2.3"
+      }
+    ],
+    "archives": [
+      {
+        "url": "https://example.com/tool.tgz",
+        "sha256": "<checksum>",
+        "dest": "Dependencies/bin",
+        "strip": 1
+      }
+    ],
+    "binaries": [
+      {
+        "name": "example",
+        "version": ">=4",
+        "install": "curl -L ... | bash",
+        "path_hint": "Dependencies/bin"
+      }
+    ]
+  }
+}

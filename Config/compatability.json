@@ -1,0 +1,30 @@
+{
+  "compatibility": {
+    "platforms": [
+      "linux",
+      "darwin",
+      "windows"
+    ],
+    "architectures": [
+      "x86_64",
+      "arm64"
+    ],
+    "os_family": {
+      "debian": {
+        "min": "10"
+      },
+      "rhel": {
+        "min": "8"
+      },
+      "alpine": {
+        "min": "3.17"
+      },
+      "darwin": {
+        "min": "12"
+      },
+      "windows": {
+        "min": "10"
+      }
+    }
+  }
+}

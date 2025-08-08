@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/HL-Common-Setup.iml" filepath="$PROJECT_DIR$/.idea/HL-Common-Setup.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/HL-Setup.iml" filepath="$PROJECT_DIR$/.idea/HL-Setup.iml" />
     </modules>
   </component>
 </project>

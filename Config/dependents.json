@@ -1,0 +1,14 @@
+{
+  "dependents": {
+    "HL-Common-Setup": {
+      "repo": "https://github.com/StevenNaliwajka/HL-Common-Setup",
+      "default": true,
+      "source": "static" // options:  static: Use Parents if exist, or local: gen your own copy
+    },
+    "HL-Template": {
+      "repo": "https://github.com/StevenNaliwajka/HL_Template",
+      "default": true,
+      "source":"local" // options:  static: Use Parents if exist, or local: gen your own copy
+    }
+  }
+}

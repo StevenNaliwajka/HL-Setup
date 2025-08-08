@@ -1,0 +1,13 @@
+{
+  "lifecycle": {
+    "hooks": {
+      "pre_setup": "scripts/pre_setup.sh",
+      "post_setup": "scripts/post_setup.sh",
+      "pre_uninstall": "scripts/pre_uninstall.sh",
+      "post_uninstall": "scripts/post_uninstall.sh",
+      "on_launch": [
+        "scripts/init.sh"
+      ]
+    }
+  }
+}

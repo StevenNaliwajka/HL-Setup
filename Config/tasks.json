@@ -1,0 +1,33 @@
+{
+  "tasks": {
+    "validate": [
+      {
+        "cmd": "python3 -c 'import requests'"
+      },
+      {
+        "cmd": "test -f Config/config.yaml"
+      }
+    ],
+    "smoke": [
+      {
+        "cmd": "curl -fsS http://localhost:{{ listen_port }}/health || exit 1",
+        "retries": 5,
+        "delay": "2s"
+      }
+    ],
+    "cleanup": [
+      {
+        "cmd": "rm -rf .cache tmp || true"
+      }
+    ]
+  },
+  "uninstall": {
+    "remove_files": [
+      "Config/config.yaml",
+      "Logs"
+    ],
+    "remove_systemd": [
+      "hl-example.service"
+    ]
+  }
+}

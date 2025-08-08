@@ -1,0 +1,20 @@
+{
+    "containers": {
+    "engine": "docker",
+    "build": false,
+    "image_name": "hl-common-setup",
+    "dockerfile": "Dockerfile",
+    "ports": [ {"host": 8050, "container": 8050} ],
+    "volumes": [ {"host": "./Data", "container": "/app/data"} ],
+    "compose": {
+      "enabled": false,
+      "file": "docker-compose.yml",
+      "services": ["web"]
+    },
+    "k8s": {
+      "enabled": false,
+      "manifests": ["k8s/deployment.yaml", "k8s/service.yaml"],
+      "namespace": "default"
+    }
+  }
+}

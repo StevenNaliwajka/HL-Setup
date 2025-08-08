@@ -1,0 +1,22 @@
+{
+  "requirements": {
+    "runtimes": {
+      "python": {"required": true, "versions": [">=3.10"]},
+      "node":   {"required": false, "versions": [">=18"], "package_manager": "pnpm"},
+      "go":     {"required": false, "versions": [">=1.22"]},
+      "java":   {"required": false, "versions": ["17"]},
+      "rust":   {"required": false, "versions": [">=1.77"]}
+    },
+    "managers": {
+      "apt":   ["curl", "git", "jq"],
+      "dnf":   ["curl", "git", "jq"],
+      "apk":   ["curl", "git", "jq"],
+      "brew":  ["gnu-sed", "jq"],
+      "choco": ["git", "jq"]
+    },
+    "pip": ["requests", "dash"],
+    "npm": [],
+    "go_get": [],
+    "cargo": []
+  }
+}

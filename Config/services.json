@@ -1,0 +1,34 @@
+{
+  "services": {
+    "systemd": [
+      {
+        "name": "hl-example.service",
+        "unit": {
+          "Description": "Example HL service",
+          "After": "network.target"
+        },
+        "service": {
+          "Type": "simple",
+          "User": "root",
+          "WorkingDirectory": "{{ project_root }}",
+          "ExecStart": "/usr/bin/python3 main.py --port {{ listen_port }}",
+          "Restart": "always",
+          "Environment": [
+            "PYTHONUNBUFFERED=1"
+          ]
+        },
+        "install": {
+          "WantedBy": "multi-user.target"
+        },
+        "state": "enabled"
+      }
+    ],
+    "cron": [
+      {
+        "name": "healthcheck",
+        "schedule": "*/5 * * * *",
+        "command": "bash scripts/health_check.sh"
+      }
+    ]
+  }
+}

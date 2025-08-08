@@ -1,0 +1,66 @@
+{
+  "configuration": {
+    "configurable": true,
+    "prompts": [
+      {
+        "key": "listen_port",
+        "question": "Port to listen on?",
+        "default": 8050,
+        "type": "int"
+      },
+      {
+        "key": "env",
+        "question": "Environment?",
+        "default": "dev",
+        "choices": [
+          "dev",
+          "staging",
+          "prod"
+        ]
+      },
+      {
+        "key": "enable_metrics",
+        "question": "Enable metrics?",
+        "default": false,
+        "type": "bool"
+      }
+    ],
+    "env": {
+      "APP_ENV": "{{ env }}",
+      "APP_PORT": "{{ listen_port }}"
+    },
+    "secrets": [
+      {
+        "key": "API_TOKEN",
+        "source": "env:MY_APP_TOKEN",
+        "required": false
+      }
+    ],
+    "templates": [
+      {
+        "src": "templates/config.yaml.j2",
+        "dest": "Config/config.yaml",
+        "mode": "0644",
+        "owner": "root:root"
+      }
+    ],
+    "files": [
+      {
+        "path": "Data",
+        "state": "directory",
+        "mode": "0755"
+      },
+      {
+        "path": "Logs",
+        "state": "directory",
+        "mode": "0755"
+      }
+    ],
+    "symlinks": [
+      {
+        "src": "../HL-Common-Setup",
+        "dest": "Dependencies/HL-Common-Setup"
+      }
+    ]
+  }
+}

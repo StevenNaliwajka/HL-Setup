@@ -1,0 +1,36 @@
+HL_TEMPLATE
+User runs
+setup.sh
+
+Setup.sh
+runs:
+HL_Template/Scripts/pre-setup.sh
+ - call Dependencies/HL_Common_Setup/setup.sh
+            HL_Common_Setup/setup.sh
+            __ it is the parent setup script.
+            Every other script will be passed -env values of dependency folders where stuffs saved.
+
+            runs HL_Common_Setup/Scripts/pre-setup.sh
+            /Setup.sh goes to dependencies and sees none.
+            It can then go and go look at Config and begin deploying
+
+            Compatibility,
+            runs Codebase/check_compatibility.sh
+            runs Codebase/check_configuration.sh
+            runs Codebase/check_containers.sh
+            runs Codebase/check_dependencies.sh
+            runs Codebase/check_dependents.sh
+            runs Codebase/check_identity.sh
+            runs Codebase/check_requirements.sh
+            runs Codebase/check_services.sh
+            runs Codebase/check_tasks.sh
+
+            after that, its done.
+            Goes back up the chain.
+
+
+
+
+Setup.sh checks for dependencies in HL_TEMPLATE/Codebase/Dependencies/
+asking if users want to include?
+- if yes call HL_TEMPLATE/Codebase/Dependencies/X/setup.sh passing its location
